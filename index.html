@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <style>
+        /* 1. Reset Dasar & Variabel Warna */
+:root {
+    --primary-color: #3498db;    /* Biru modern */
+    --secondary-color: #2c3e50;  /* Abu-abu gelap profesional */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f4f7f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Membuat scroll terasa halus saat klik menu */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* 2. Navigasi */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* 3. Header / Hero Section */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80'); /* Gambar background bertema tech */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    text-align: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+header button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+header button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* 4. Bagian Proyek (Grid System) */
+#projects {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+#projects h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+#projects h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-top: 5px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-top: 5px solid var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+/* 5. Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+/* 6. Responsivitas (Mobile Friendly) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Portfolio Punyaku</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Halo, Saya <span class="highlight">Eustakia Lucia Selpi</span></h1>
+        <p>Tech Enthusiast Developer Forever</p>
+        <button onclick="showAlert()">Kenali Saya</button>
+    </header>
+
+    <section id="projects">
+        <h2>Proyek Saya</h2>
+        <div class="project-grid">
+            <a href="" class="a">
+            <div class="card">
+                <h3>Javascript</h3>
+                <p>Membuat aplikasi cuaca menggunakan API pihak ketiga, bootstrap, microsoft word, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1nwgFQivl3bYv_3RVjQ6dXfFpBmQf7Enj?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Mongo DB</h3>
+                <p>Memasukkan data mahasiswa, dan dosen, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1pHlvEJXsTd3w7P41sUXHsK46KdayhFXr?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Xampp</h3>
+                <p>Memasukkan data, menambahkan data, mengubah data, serta menghapus data mahasiswa, dosen, produk elektronik, chatbot, login, dan register, koneksi ke php, netbeans, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1zYZgkxWy02p--JBQRi4LF-lHoOI1kYL7?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Adobe XD</h3>
+                <p>Membuat desain pembayaran laundry serta menawarkan jasa, login, register, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1b0FHzGqFrWk0w9LcowJRn-FmR1Do0cb6?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Figma</h3>
+                <p>Membuat desain pembayaran laundry serta menawarkan jasa, login, register, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1Q_0M-Xlkoks5a9u88_G5u6xL87FsL6qu?usp=drive_link" class="a">
+            <div class="card">
+                <h3>PHP</h3>
+                <p>Membuat aplikasi chatbot, login, dan register, mengelola produk elektronik, koneksi mysql xampp, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1FXk7W20vPAuWt-fiUjXIPRHZ8jcpohpo?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Firebase</h3>
+                <p>Membuat aplikasi yang bisa login, API, register, dan chattingan, android studio, iklan admob, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1Gv_q9vNmw8qG7p8YHJAmwlMarrIW9w8D?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Android Studio</h3>
+                <p>Membuat aplikasi yang bisa memasukkan, mengubah, serta menghapus nama, nim mahasiswa, login, register, dan chattingan, firebase, iklan admob, Sqlite, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1mM3pzv1Tr419mxsZLZRHm5cWTqYQAAu_?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Python</h3>
+                <p>Membuat aplikasi enghitung luas rumah</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1qPjUZxMTXqSujAdvGg2kJv2x2rMpWzY9?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Netbeans</h3>
+                <p>Membuat aplikasi yang mengelola gambar, text produk ,login, register, koneksi mysql xampp, Spring boot</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/1tsRmY_PtvJXk6XodtKsvzLgActgXCo2u?usp=drive_link" class="a">
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Membuat aplikasi yang mengelola gambar, text produk, menghitung luas rumah, admin, user</p>
+            </div></a>
+            <a href="https://drive.google.com/drive/folders/11VAdRA2YjRbY2FAFFdxU26Wke6OcYVR6?usp=drive_link" class="a">
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Membuat aplikasi yang mengelola gambar, text produk, menghitung luas rumah, membuat chatbot, login, dan register, mengelola produk elektronik, </p>
+                <p>Aplikasi cuaca menggunakan API pihak ketiga, bootstrap, microsoft word, admin, user</p>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1P-yKnrpjUY0uLXJi5eigXKqrjwzYBEh5?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Laravel</h3>
+                <p>Membuat aplikasi chatbot, mengelola produk serta menawarkan jasa, download file, admin, user</p>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1_La8mfVj2XV1NvXSu9T7YcRuTQW6ExLQ?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Vuejs</h3>
+                <p>Membuat aplikasi yang bisa mengelola produk serta menawarkan jasa, admin, API dari postman</p>
+            </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1qPjUZxMTXqSujAdvGg2kJv2x2rMpWzY9?usp=drive_link" class="a">
+            <div class="card">
+                <h3>Spring boot</h3>
+                <p>membuat aplikasi API dari postman</p>
+            </div></a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Hubungi saya di: werrkakooo@gmail.com</p>
+    </footer>
+
+    <script>
+    // 1. Fungsi Alert untuk Tombol 'Kenali Saya'
+    function showAlert() {
+        alert("Halo! Saya Eustakia Lucia Selpi. Senang berkenalan dengan Anda!");
+    }
+
+    // 2. Animasi Pengetikan (Typing Effect)
+    const textElement = document.querySelector('header p');
+    const text = textElement.innerText;
+    textElement.innerText = '';
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            textElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100); // Kecepatan ketik
+        }
+    }
+
+    // Jalankan efek ketik saat halaman dimuat
+    window.onload = typeWriter;
+
+    // 3. Animasi Reveal on Scroll (Muncul saat di-scroll)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    // Menyiapkan elemen kartu proyek sebelum dianimasi
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "all 0.6s ease-out";
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>
