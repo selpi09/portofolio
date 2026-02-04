@@ -1,0 +1,259 @@
+/* 1. Reset Dasar & Variabel Warna */
+:root {
+    --primary-color: #3498db;    /* Biru modern */
+    --secondary-color: #2c3e50;  /* Abu-abu gelap profesional */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f4f7f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Membuat scroll terasa halus saat klik menu */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* 2. Navigasi */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* 3. Header / Hero Section */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80'); /* Gambar background bertema tech */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    text-align: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+header button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+header button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* 4. Bagian Proyek (Grid System) */
+#projects {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+#projects h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+#projects h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-top: 5px solid transparent;
+    scroll-snap-align: start;
+    height: 300px; /* Memastikan kartu mengikuti isi */
+    padding-bottom: 20px; /* Beri sedikit ruang agar tidak terlalu mepet */
+    display: flex;
+    vertical-align: top;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto; /* Mencegah elemen dalam keluar jalur */
+    width: auto;
+}
+.card-content::-webkit-scrollbar {
+            width: 20px;
+        }
+        .card-content::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+.card:hover {
+    transform: translateY(-10px);
+    border-top: 5px solid var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+/* 5. Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+/* 6. Responsivitas (Mobile Friendly) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+img{
+    width: 250px;
+    height: auto;
+    
+}
+
+.search-container {
+            max-width: 400px;
+            
+        }
+
+        /* Input Pencarian */
+        #searchInput {
+            width: 100%;
+            margin-left: 20px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            padding-right: 5px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        #searchInput:focus {
+            border-color: #6200ee;
+        }
+
+        /* Daftar Hasil */
+        .list-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            list-style: none;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
